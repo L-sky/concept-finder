@@ -1,3 +1,9 @@
+# Project specific
+data/
+data_sample/
+spark-warehouse/
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
