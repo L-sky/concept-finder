@@ -1,6 +1,10 @@
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('scholar').getOrCreate()
+spark = SparkSession.builder.\
+    master('local[2]').\
+    appName('scholar').\
+    getOrCreate()
+
 sc = spark.sparkContext
 
 gzfile = './data/*.gz'

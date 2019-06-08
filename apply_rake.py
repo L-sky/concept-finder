@@ -6,7 +6,10 @@ from pyspark.sql.types import ArrayType, StructType, StructField, FloatType, Str
 from pyspark.sql.functions import udf
 
 
-spark = SparkSession.builder.appName('scholar').getOrCreate()
+spark = SparkSession.builder.\
+    master('local[2]').\
+    appName('scholar').\
+    getOrCreate()
 
 sc = spark.sparkContext
 sqlContext = SQLContext(sc)
@@ -15,8 +18,8 @@ sqlContext = SQLContext(sc)
 data = sqlContext.read.format('orc').load('./data/orc')
 
 rake_schema = ArrayType(StructType([
-    StructField('score', FloatType(), nullable=True),
-    StructField('concept', StringType(), nullable=True)
+    StructField('score', FloatType()),
+    StructField('concept', StringType())
 ]), containsNull=True)
 
 """
@@ -42,7 +45,7 @@ def apply_rake(text):
 
 spark_rake = udf(lambda text: apply_rake(text), rake_schema)
 
-res = data.filter('year<1937').select('id', spark_rake('paperAbstract').alias('candidateConcepts'))
+res = data.filter('paperAbstract!=\'\'').select('id', 'title', 'year', 'entities', spark_rake('paperAbstract').alias('candidateConcepts'))
 print(res.count())
 
 res.write.save('./data/candidates', format='orc', mode='append')
