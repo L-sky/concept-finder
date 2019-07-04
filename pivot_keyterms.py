@@ -18,6 +18,7 @@ df = sqlContext.read.format('parquet').load('hdfs:/scholar_data/base.parquet').\
     withColumn('entities', F.explode('entities'))
 
 df = df.withColumn('entities', F.lower(F.col('entities')))
+df = df.withColumn('entities', F.regexp_replace(F.col('entities'), '(\d)[, ](\d{3})', '$1$2'))
 df = df.withColumn('entities', F.explode(F.split('entities', '[,]')))
 df = df.withColumn('entities', F.trim(F.col('entities')))
 df = df.withColumn('entities', F.regexp_replace(F.col('entities'), '_', ' '))
