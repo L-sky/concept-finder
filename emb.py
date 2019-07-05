@@ -32,7 +32,8 @@ pd_df['embeddings'] = pd_df['entities'].apply(model.__getitem__)
 del model
 
 emb_components = pd.DataFrame(pd_df['embeddings'].tolist(), columns=[f'v{i}' for i in range(emb_length)])
-pd_df = pd.concat([pd_df['entities'], emb_components[:]], axis=1) 
+pd_df['embeddings'] = pd_df['embeddings'].apply(lambda x: list(x))
+pd_df = pd.concat([pd_df[:], emb_components[:]], axis=1) 
 
 pa_df = pa.Table.from_pandas(pd_df)
 
