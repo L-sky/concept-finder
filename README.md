@@ -44,7 +44,7 @@ Project uses data from Semantic Scholar Open Research Corpus: https://api.semant
 
 Download by running from project folder (creates data/ subfolder and stores there):
 ```
-sh get_data.sh
+sh bash/get_data.sh
 ```
 Or by following instructions on the website. In later case, make sure to remove sample file **sample-S2-records.gz** in order to avoid data duplication.
 
@@ -54,7 +54,7 @@ Project uses fastText model pretrained on Common Crawl: https://fasttext.cc/docs
 
 Download by running from project folder (creates fasttext/ subfolder and stores there):
 ```
-sh get_fasttext_model.sh
+sh bash/get_fasttext_model.sh
 ```
 
 ## References
