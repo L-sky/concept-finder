@@ -48,9 +48,14 @@ sh get_data.sh
 ```
 Or by following instructions on the website. In later case, make sure to remove sample file **sample-S2-records.gz** in order to avoid data duplication.
 
-### Download pre-trained fastText model
+### Download pretrained fastText model
 
-// TODO: add download script (?)
+Project uses fastText model pretrained on Common Crawl: https://fasttext.cc/docs/en/english-vectors.html
+
+Download by running from project folder (creates fasttext/ subfolder and stores there):
+```
+sh get_fasttext_model.sh
+```
 
 ## References
 
