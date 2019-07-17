@@ -20,11 +20,9 @@ Python: https://www.python.org/downloads/
 
 ### Configure software
 
-If you have multiple installations of Java, set priority with: `sudo update-alternatives --config java`
-
-For Hadoop configuration check: http://cloudyrathor.com/hadoop-installation-configuration/
-
-For .bashrc file, add contents of `append_to_bashrc.txt`. It contains environmental variables for Java, Hadoop and Spark. 
+* Java: `sudo update-alternatives --config java` (set priority, if you have multiple installations)
+* Hadoop: http://cloudyrathor.com/hadoop-installation-configuration/
+* ~/.bashrc: append contents of `append_to_bashrc.txt` (contains environmental variables for Java, Hadoop and Spark) 
 
 Also, as stated here: http://spark.apache.org/docs/latest/hadoop-provided.html and extended here: http://apache-spark-user-list.1001560.n3.nabble.com/Running-Spark-on-user-provided-Hadoop-installation-td24076.html, append to the conf/spark-env.sh (located in Spark installation folder):
 ```bash
