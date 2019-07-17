@@ -24,7 +24,7 @@ Python: https://www.python.org/downloads/
 * Hadoop: http://cloudyrathor.com/hadoop-installation-configuration/
 * ~/.bashrc: append contents of `append_to_bashrc.txt` (contains environmental variables for Java, Hadoop and Spark) 
 
-Also, as stated here: http://spark.apache.org/docs/latest/hadoop-provided.html and extended here: http://apache-spark-user-list.1001560.n3.nabble.com/Running-Spark-on-user-provided-Hadoop-installation-td24076.html, append to the conf/spark-env.sh (located in Spark installation folder):
+Also, as stated here: http://spark.apache.org/docs/latest/hadoop-provided.html and extended here: http://apache-spark-user-list.1001560.n3.nabble.com/Running-Spark-on-user-provided-Hadoop-installation-td24076.html, append to the **conf/spark-env.sh** (located in Spark installation folder):
 ```bash
 SPARK_DIST_CLASSPATH=$(hadoop classpath)
 export SPARK_DIST_CLASSPATH="$SPARK_DIST_CLASSPATH:/usr/local/hadoop/share/hadoop/tools/lib/*" 
@@ -56,6 +56,37 @@ Download by running from project folder (creates fasttext/ subfolder and stores 
 ```
 sh bash/get_fasttext_model.sh
 ```
+
+### HDFS and Yarn 
+
+Before starting for the first time, run in shell:
+```
+hadoop namenode -format
+```
+
+Once name-nodes are formatted, you can start daemons for Hadoop file system and Yarn resource manager with respective commands:
+```
+start-dfs.sh
+start-yarn.sh
+```
+
+For a good measure, create folder **scholar_data** in HDFS:
+```
+hdfs dfs -mkdir scholar_data/
+```
+
+Now you can convert data from set of compressed jsons to parquet and store to HDFS. This is by far the most time consuming step, may take several hours to complete. On the bright side, due to to conversion, all consequent operations (check **report.ipynb** or **src** folder) become rather fast.   
+```
+python src/0_convert_to_parquet_store_to_hdfs.py
+```
+
+Once done, daemons can be stopped with:
+```
+stop-dfs.sh
+stop-yarn.sh
+```
+
+**Note**: for most scripts in repository you will need daemons running. 
 
 ## References
 
