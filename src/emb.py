@@ -43,12 +43,6 @@ fs = pa.hdfs.connect()
 with fs.open('hdfs:/scholar_data/token_embeddings.parquet', 'wb') as target:
     pq.write_table(pa_df, target)
 
-"""
-schema = T.StructType([T.StructField(f'v{i}', T.FloatType(), False) for i in range(emb_length)])
-emb_udf = F.udf(lambda x: model[x], schema)
-df = df.select('entities', emb_udf('entities').alias('embedding')).select('entities', 'embedding.*')
-df.write.save('hdfs:/scholar_data/token_embeddings.parquet', format='parquet', mode='overwrite')
-"""
 
 
 

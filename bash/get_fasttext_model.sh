@@ -10,13 +10,12 @@ cd fasttext
 URL_MODEL=https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M-subword.zip
 
 # get model archive
-wget $URL_MANIFEST
+wget $URL_MODEL
 
-# unzip
-unzip crawl-300d-2M-subword.zip
+# extract only model file
+unzip crawl-300d-2M-subword.zip crawl-300d-2M-subword.bin
 
-# remove embeddings (.vec) and archive (.zip), keep only model (.bin) 
-rm crawl-300d-2M-subword.vec
+# clean up 
 rm crawl-300d-2M-subword.zip
 
 # return back
