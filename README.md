@@ -32,8 +32,6 @@ export SPARK_DIST_CLASSPATH="$SPARK_DIST_CLASSPATH:/usr/local/hadoop/share/hadoo
 
 ### Install python libraries
 
-// TODO: revise requirements.txt
-
 ```
 pip install -r requirements.txt
 ```
