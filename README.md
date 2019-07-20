@@ -3,6 +3,10 @@ Course project for Mining Massive Datasets course at UCU.
 
 ## Preliminary steps (Ubuntu 18.04, 16.04)
 
+### Disclaimer/Hardware requirements 
+
+To run this project you will need a machine with 16GB of RAM, 80 GB of storage spase in peak. The expected time of run for this notebook is more than 24 hours, depending on your machine setup. 
+
 ### Install software
 
 * Java 8 (at the time of writing, newer versions are not supported by Hadoop and Spark)
