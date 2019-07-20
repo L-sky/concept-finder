@@ -1,6 +1,8 @@
 # Concept-finder
 Course project for Mining Massive Datasets course at UCU.
 
+In scientific community it is crucial to stay in touch with emerging state-of-the-art works and concepts. As more and more papers getting published every day, it becomes impossible to follow all of them even when narrow area of interest considered. With this project we want to provide the academic researchers with personilized list of scientific concepts studying of which would enhance their research capabilities. 
+
 ## Preliminary steps (Ubuntu 18.04, 16.04)
 
 ### Disclaimer/Hardware requirements 
