@@ -3,11 +3,11 @@ Course project for Mining Massive Datasets course at UCU.
 
 In scientific community it is crucial to stay in touch with emerging state-of-the-art works and concepts. As more and more papers getting published every day, it becomes impossible to follow all of them even when narrow area of interest considered. With this project we want to provide the academic researchers with personilized list of scientific concepts studying of which would enhance their research capabilities. 
 
+## Hardware requirements 
+
+To run the code you will need a machine with 16GB RAM (fastText model won't fit in 8 GB) and 80 GB of storage space (in peak). Code execution is computationally extensive and easily can exceed 24 hours, depending on your machine setup. 
+
 ## Preliminary steps (Ubuntu 18.04, 16.04)
-
-### Disclaimer/Hardware requirements 
-
-To run this project you will need a machine with 16GB of RAM, 80 GB of storage spase in peak. The expected time of run for this notebook is more than 24 hours, depending on your machine setup. 
 
 ### Install software
 
