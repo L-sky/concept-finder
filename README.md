@@ -111,3 +111,17 @@ T. Mikolov, E. Grave, P. Bojanowski, C. Puhrsch, A. Joulin. Advances in Pre-Trai
   year={2018}
 }
 ```
+
+S. Rose, D. Engel, N. Cramer, W. Cowley. Automatic Keyword Extraction from Individual Documents.
+```
+@inbook{inbook,
+author = {Rose, Stuart and Engel, Dave and Cramer, Nick and Cowley, Wendy},
+year = {2010},
+month = {03},
+pages = {1 - 20},
+title = {Automatic Keyword Extraction from Individual Documents},
+isbn = {9780470689646},
+journal = {Text Mining: Applications and Theory},
+doi = {10.1002/9780470689646.ch1}
+}
+```
